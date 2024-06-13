@@ -11,13 +11,13 @@ router_calculate = APIRouter(
 
 
 @router_calculate.post("",
-                       response_model=List[Dict[str, float]],
+                       response_model=Dict[str, float],
                        status_code=200,
                        summary="Calculate deposit",
                        description="Calculate deposit based on input parameters"
                        )
 def calculate_endpoint(
         request: DepositRequest
-) -> List[Dict[str, float]]:
+) -> Dict[str, float]:
     result = calculate_deposit(request)
     return result

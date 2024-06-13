@@ -17,7 +17,7 @@ def validation_exception_handler(
 ):
     return JSONResponse(
         status_code=400,
-        content={"detail": exc.errors(), "body": exc.body},
+        content={"error": exc.errors()},
     )
 
 
