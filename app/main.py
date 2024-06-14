@@ -29,7 +29,9 @@ def internal_server_error_handler(request: Request, exc: Exception):
     )
 
 
-@app.get('/')
+@app.get('/',
+         tags=["root"]
+         )
 def index():
     return {"Hello": "friend"}
 
